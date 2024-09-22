@@ -51,4 +51,32 @@ export class AppComponent {
             date: '2022 - presente',
         },
     ]
+
+    projects = [
+        {
+            imgUrl: 'img/airplane.png',
+            imgAlt: 'Airplane',
+            title: 'SurAmerica Airlines',
+            url: 'https://suramerica-airlines.netlify.app/',
+            date: '2021',
+        },
+        {
+            imgUrl: 'img/movil-aplication.png',
+            imgAlt: 'Movil aplication',
+            title: 'Fundamentals of Progressive Web Apps',
+            url: 'https://yoniervasquezmarin.github.io/Mi-app-PWA/',
+            date: '2021',
+        },
+        {
+            imgUrl: 'img/economics.png',
+            imgAlt: 'Economics',
+            title: 'Economic calculator',
+            url: 'https://calculadora-financiera.netlify.app/',
+            date: '2021',
+        },
+    ]
+
+    openProject(url: string) {
+        window.open(url, '_blank')
+    }
 }

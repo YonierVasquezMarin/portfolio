@@ -25,4 +25,23 @@
             </span>
         </section>
     </section>
+
+    <!-- Projects -->
+    <h1 class="title">Projects</h1>
+    <section class="experiences">
+        <section
+            *ngFor="let project of projects"
+            class="experience card-pointer"
+            (click)="openProject(project.url)"
+            title="Visit page"
+        >
+            <div>
+                <img src="{{ project.imgUrl }}" alt="{{ project.imgAlt }}" />
+            </div>
+            <span>
+                {{ project.title }}
+                <span class="experience-date">({{ project.date }})</span>
+            </span>
+        </section>
+    </section>
 </main>
