@@ -39,9 +39,10 @@
 }
 
 .experiences {
-    gap: 2rem;
+    gap: 3rem;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .experience {

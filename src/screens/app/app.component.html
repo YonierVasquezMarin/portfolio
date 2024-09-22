@@ -1,21 +1,28 @@
 <main class="container">
+    <!-- Title and description -->
     <h1 class="title first-title">Hi. I'm Yonier.<br />A developer.</h1>
     <p class="description">
         I'm a software developer passionate about creating and improving platforms that seek to be intuitive, easy to
         use and useful for people.
     </p>
 
+    <!-- All the skills -->
     <section class="skills">
         <div *ngFor="let skill of skills">{{ skill }}</div>
     </section>
 
+    <!-- Experiences -->
     <h1 class="title">Experience</h1>
+
     <section class="experiences">
-        <section class="experience">
+        <section *ngFor="let experience of experiences" class="experience">
             <div>
-                <img src="img/international.png" alt="International" />
+                <img src="{{ experience.imgUrl }}" alt="{{ experience.imgAlt }}" />
             </div>
-            <span>Curso intensivo desarrollo web (Argentina) <span class="experience-date">(2020)</span></span>
+            <span>
+                {{ experience.title }}
+                <span class="experience-date">({{ experience.date }})</span>
+            </span>
         </section>
     </section>
 </main>

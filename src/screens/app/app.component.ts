@@ -30,4 +30,25 @@ export class AppComponent {
         'Microservices',
         'Machine learning',
     ]
+
+    experiences = [
+        {
+            imgUrl: 'img/international.png',
+            imgAlt: 'International',
+            title: 'Curso intensivo desarrollo web, Argentina',
+            date: '2020',
+        },
+        {
+            imgUrl: 'img/computers.png',
+            imgAlt: 'Computers',
+            title: 'Ingeniería en sistemas, Universidad de Caldas',
+            date: '2020 - presente',
+        },
+        {
+            imgUrl: 'img/teamwork.png',
+            imgAlt: 'Teamwork',
+            title: 'Desarrollador web, Opi Technologies',
+            date: '2022 - presente',
+        },
+    ]
 }
