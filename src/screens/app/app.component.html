@@ -6,24 +6,7 @@
     </p>
 
     <section class="skills">
-        <div>Teamwork</div>
-        <div>Problem solving</div>
-        <div>Continuous learning</div>
-        <div>Agile methodologies</div>
-        <div>Web development</div>
-        <div>Mobile development</div>
-        <div>APIs</div>
-        <div>Version control</div>
-        <div>Code review</div>
-        <div>CI/CD</div>
-        <div>DevOps</div>
-        <div>Cloud computing</div>
-        <div>UX/UI</div>
-        <div>Performance</div>
-        <div>Responsive design</div>
-        <div>Scalability</div>
-        <div>Microservices</div>
-        <div>Machine learning</div>
+        <div *ngFor="let skill of skills">{{ skill }}</div>
     </section>
 
     <h1 class="title">Experience</h1>
