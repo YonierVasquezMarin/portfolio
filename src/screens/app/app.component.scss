@@ -37,3 +37,43 @@
         background-color: #116b11;
     }
 }
+
+.experiences {
+    gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.experience {
+    gap: 2rem;
+    width: 600px;
+    display: flex;
+    height: 13rem;
+    border-radius: 2rem;
+    background-color: #4565cd;
+
+    div {
+        height: 100%;
+
+        img {
+            height: 100%;
+            border-radius: 2rem 0 0 2rem;
+        }
+    }
+
+    span {
+        gap: 1rem;
+        display: flex;
+        color: white;
+        font-weight: 500;
+        font-size: 1.4rem;
+        margin-right: 2rem;
+        align-items: baseline;
+        flex-direction: column;
+        justify-content: center;
+
+        span {
+            font-weight: 100;
+        }
+    }
+}
