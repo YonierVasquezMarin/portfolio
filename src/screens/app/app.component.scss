@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.title {
+    margin: 0;
+    font-size: 6rem;
+    color: #0a470a;
+    margin-top: 8rem;
+    text-align: center;
+}
+
+.description {
+    font-weight: 500;
+    color: #1f4615;
+    font-size: 1.2rem;
+    text-align: center;
+}
