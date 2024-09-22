@@ -1,15 +1,19 @@
 .container {
+    gap: 8rem;
     display: flex;
+    padding: 0 2rem;
     flex-direction: column;
-    gap: 3rem;
 }
 
 .title {
     margin: 0;
     font-size: 6rem;
     color: #0a470a;
-    margin-top: 8rem;
     text-align: center;
+}
+
+.first-title {
+    margin-top: 8rem;
 }
 
 .description {
@@ -17,4 +21,19 @@
     color: #1f4615;
     font-size: 1.2rem;
     text-align: center;
+}
+
+.skills {
+    gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    div {
+        color: white;
+        font-size: 1.2rem;
+        padding: 2rem 3rem;
+        border-radius: 1rem;
+        background-color: #116b11;
+    }
 }
