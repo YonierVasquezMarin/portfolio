@@ -48,7 +48,13 @@ export class AppComponent {
             imgUrl: 'img/teamwork.png',
             imgAlt: 'Teamwork',
             title: 'Desarrollador web, Opi Technologies',
-            date: '2022 - presente',
+            date: '2022 - 2024',
+        },
+        {
+            imgUrl: 'img/sap-b1.webp',
+            imgAlt: 'SAP B1',
+            title: 'Ingeniero de software, Consensus S.A.',
+            date: '2024 - presente',
         },
     ]
 
