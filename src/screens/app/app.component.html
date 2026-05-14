@@ -1,47 +1,259 @@
-<main class="container">
-    <!-- Title and description -->
-    <h1 class="title first-title">Hi. I'm Yonier.<br />A developer.</h1>
-    <p class="description">
-        I'm a software developer passionate about creating and improving platforms that seek to be intuitive, easy to
-        use and useful for people.
-    </p>
+<div class="page">
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar" [class.is-scrolled]="scrolled()">
+        <div class="navbar__inner">
+            <a class="brand" href="#top">
+                <span class="brand__mark">YV</span>
+                <span class="brand__name">Yonier<span class="brand__dot">.</span></span>
+            </a>
 
-    <!-- All the skills -->
-    <section class="skills">
-        <div *ngFor="let skill of skills">{{ skill }}</div>
-    </section>
+            <nav class="nav">
+                <a *ngFor="let item of navItems" [href]="item.href" class="nav__link">{{ item.label }}</a>
+            </nav>
 
-    <!-- Experiences -->
-    <h1 class="title">Experience</h1>
+            <a href="#contact" class="btn btn--primary btn--sm">
+                Contactar
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </a>
+        </div>
+    </header>
 
-    <section class="experiences">
-        <section *ngFor="let experience of experiences" class="experience">
-            <div>
-                <img src="{{ experience.imgUrl }}" alt="{{ experience.imgAlt }}" />
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="top">
+        <div class="hero__inner">
+            <div class="hero__copy">
+                <span class="chip">
+                    <span class="chip__dot"></span>
+                    Disponible para nuevos proyectos
+                </span>
+                <h1 class="hero__title">
+                    Hola, soy <span class="grad-text">Yonier</span>.<br />
+                    Un desarrollador<br />
+                    de software.
+                </h1>
+                <p class="hero__description">
+                    Apasionado por crear y mejorar plataformas que buscan ser intuitivas, fáciles de usar y útiles para
+                    las personas. Construyo productos digitales con foco en experiencia, calidad y escala.
+                </p>
+                <div class="hero__actions">
+                    <a href="#contact" class="btn btn--primary">
+                        Hablemos
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a href="#projects" class="btn btn--ghost">Ver proyectos</a>
+                </div>
+
+                <div class="hero__stats">
+                    <div *ngFor="let stat of stats" class="stat">
+                        <div class="stat__value">{{ stat.value }}</div>
+                        <div class="stat__label">{{ stat.label }}</div>
+                    </div>
+                </div>
             </div>
-            <span>
-                {{ experience.title }}
-                <span class="experience-date">({{ experience.date }})</span>
-            </span>
-        </section>
+
+            <!-- Decorative illustration -->
+            <div class="hero__art" aria-hidden="true">
+                <div class="art-orb art-orb--purple"></div>
+                <div class="art-orb art-orb--pink"></div>
+                <div class="art-orb art-orb--cyan"></div>
+
+                <div class="art-card art-card--window">
+                    <div class="window__bar">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div class="window__body">
+                        <div class="code-line">
+                            <span class="kw">const</span> developer = <span>{{ '{' }}</span>
+                        </div>
+                        <div class="code-line code-line--indent">
+                            name<span class="op">:</span> <span class="str">'Yonier'</span>,
+                        </div>
+                        <div class="code-line code-line--indent">
+                            role<span class="op">:</span> <span class="str">'Software Engineer'</span>,
+                        </div>
+                        <div class="code-line code-line--indent">
+                            focus<span class="op">:</span> [<span class="str">'web'</span>,
+                            <span class="str">'cloud'</span>],
+                        </div>
+                        <div class="code-line code-line--indent">
+                            passion<span class="op">:</span> <span class="bool">true</span>,
+                        </div>
+                        <div class="code-line">{{ '}' }}</div>
+                    </div>
+                </div>
+
+                <div class="art-card art-card--badge">
+                    <div class="badge__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M12 2l2.4 5.4 5.6.6-4.2 4 1.2 5.7L12 14.8 6.9 17.7l1.2-5.7L4 8l5.6-.6L12 2z"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="badge__title">Ingeniero de software</div>
+                        <div class="badge__sub">Consensus S.A.</div>
+                    </div>
+                </div>
+
+                <div class="art-card art-card--mini">
+                    <div class="mini__bar"></div>
+                    <div class="mini__bar mini__bar--2"></div>
+                    <div class="mini__bar mini__bar--3"></div>
+                </div>
+
+                <div class="art-stars">
+                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Projects -->
-    <h1 class="title">Projects</h1>
-    <section class="experiences">
-        <section
-            *ngFor="let project of projects"
-            class="experience card-pointer"
-            (click)="openProject(project.url)"
-            title="Visit page"
-        >
-            <div>
-                <img src="{{ project.imgUrl }}" alt="{{ project.imgAlt }}" />
-            </div>
-            <span>
-                {{ project.title }}
-                <span class="experience-date">({{ project.date }})</span>
-            </span>
-        </section>
+    <!-- ===== HIGHLIGHTS ===== -->
+    <section class="highlights" id="about">
+        <div class="section-head">
+            <span class="eyebrow">Qué hago</span>
+            <h2 class="section-title">Construyo soluciones digitales <span class="grad-text">end to end</span></h2>
+        </div>
+        <div class="highlights__grid">
+            <article *ngFor="let item of highlights" class="card highlight">
+                <div class="highlight__icon" [attr.data-icon]="item.icon">
+                    @if (item.icon === 'frontend') {
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <rect x="3" y="4" width="18" height="14" rx="2" />
+                            <path d="M3 9h18M8 21h8M12 18v3" stroke-linecap="round" />
+                        </svg>
+                    }
+                    @if (item.icon === 'backend') {
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <ellipse cx="12" cy="5" rx="8" ry="3" />
+                            <path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5" />
+                            <path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" />
+                        </svg>
+                    }
+                    @if (item.icon === 'cloud') {
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M7 18a5 5 0 1 1 .9-9.9A6 6 0 0 1 19 11a4 4 0 0 1 0 7H7z" />
+                        </svg>
+                    }
+                </div>
+                <h3 class="highlight__title">{{ item.title }}</h3>
+                <p class="highlight__desc">{{ item.description }}</p>
+            </article>
+        </div>
     </section>
-</main>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="projects" id="projects">
+        <div class="section-head">
+            <span class="eyebrow">Trabajo reciente</span>
+            <h2 class="section-title">Proyectos <span class="grad-text">destacados</span></h2>
+            <p class="section-sub">Una selección de productos en los que he participado, desde la idea hasta producción.</p>
+        </div>
+
+        <div class="projects__grid">
+            <article
+                *ngFor="let project of projects"
+                class="card project"
+                (click)="openProject(project.url)"
+                role="link"
+                tabindex="0"
+            >
+                <div class="project__media">
+                    <img [src]="project.imgUrl" [alt]="project.imgAlt" />
+                    <span class="project__tag">{{ project.tag }}</span>
+                </div>
+                <div class="project__body">
+                    <div>
+                        <h3 class="project__title">{{ project.title }}</h3>
+                        <span class="project__date">{{ project.date }}</span>
+                    </div>
+                    <span class="project__arrow" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M7 17L17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section class="experience" id="experience">
+        <div class="section-head">
+            <span class="eyebrow">Trayectoria</span>
+            <h2 class="section-title">Experiencia y <span class="grad-text">formación</span></h2>
+        </div>
+
+        <div class="experience__list">
+            <article *ngFor="let exp of experiences" class="card timeline-item">
+                <div class="timeline-item__media">
+                    <img [src]="exp.imgUrl" [alt]="exp.imgAlt" />
+                </div>
+                <div class="timeline-item__content">
+                    <h3 class="timeline-item__title">{{ exp.title }}</h3>
+                    <span class="timeline-item__date">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="5" width="18" height="16" rx="2" />
+                            <path d="M3 10h18M8 3v4M16 3v4" stroke-linecap="round" />
+                        </svg>
+                        {{ exp.date }}
+                    </span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section class="skills-section" id="skills">
+        <div class="section-head">
+            <span class="eyebrow">Herramientas</span>
+            <h2 class="section-title">Skills que <span class="grad-text">aplico</span></h2>
+        </div>
+        <div class="skills-grid">
+            <span *ngFor="let skill of skills" class="skill-pill">{{ skill }}</span>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT CTA ===== -->
+    <section class="contact" id="contact">
+        <div class="contact__card">
+            <div class="contact__glow"></div>
+            <h2 class="contact__title">¿Construimos algo <span class="grad-text">juntos</span>?</h2>
+            <p class="contact__desc">
+                Si tienes una idea, un producto o un proyecto en mente, conversemos. Siempre estoy abierto a nuevos
+                retos.
+            </p>
+            <div class="contact__actions">
+                <a href="mailto:yoniervasquezmarin@gmail.com" class="btn btn--primary btn--lg">
+                    Enviar correo
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 7l9 6 9-6M5 5h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+                <a href="https://github.com/yoniervasquezmarin" target="_blank" rel="noopener" class="btn btn--ghost btn--lg">
+                    Ver GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <span>© 2026 Yonier Vasquez Marin · Hecho con Angular</span>
+        <a href="#top" class="footer__top">
+            Volver arriba
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </a>
+    </footer>
+</div>
+
+<router-outlet></router-outlet>
