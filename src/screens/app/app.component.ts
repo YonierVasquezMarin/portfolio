@@ -115,7 +115,7 @@ export class AppComponent {
             imgUrl: 'img/sap-b1.webp',
             imgAlt: 'SAP B1',
             title: 'Ingeniero de software, Consensus S.A.',
-            date: '2024 - presente',
+            date: '2024 - 2026',
         },
     ]
 
@@ -143,6 +143,14 @@ export class AppComponent {
             url: 'https://calculadora-financiera.netlify.app/',
             date: '2021',
             tag: 'Finance',
+        },
+        {
+            imgUrl: 'img/logo-app-feria-de-manizales.webp',
+            imgAlt: 'App Feria de Manizales',
+            title: 'App Feria de Manizales',
+            url: 'https://play.google.com/store/apps/details?id=com.enterprise.manizales_fair_mobile_app',
+            date: '2025',
+            tag: 'Mobile app',
         },
     ]
 
